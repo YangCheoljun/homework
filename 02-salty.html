@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+
+        <title>원페이지쇼핑몰</title>
+        <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Jua&family=Nanum+Pen+Script&display=swap"
+              rel="stylesheet">
+
+        <style>
+            * {
+                font-family: 'Black Han Sans', sans-serif;
+                font-family: 'Do Hyeon', sans-serif;
+                font-family: 'Jua', sans-serif;
+                /*font-family: 'Nanum Pen Script', cursive;*/
+            }
+
+            .myitem {
+                width: 500px;
+                height: 500px;
+
+                /*background-image: url("https://nemone.co.kr/web/product/medium/201904/e2a6e9a9454a3c8f1a4c0928f1761fd4.jpg");*/
+                background-position: center;
+                background-size: cover;
+            }
+
+            .price {
+                font-size: 16px;
+            }
+
+            .desc {
+                width: 600px;
+                margin-top: auto;
+                margin-bottom: 20px;
+            }
+
+            .order-box {
+                width: 500px;
+            }
+
+            .mybtn {
+                width: 100px;
+                margin: auto;
+                display: block;
+            }
+
+            .wrap {
+                width: 500px;
+                margin: auto;
+            }
+
+            .rate {
+                color: blue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrap">
+
+            <div class="myitem">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100"
+                                 src="https://s3.ap-northeast-2.amazonaws.com/om-public-static/media/images/products/2020/05/carnation-moodlight-red_thum-re.jpg"
+                                 alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>카네이션(레드) 무드등</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100"
+                                 src="https://funshop.akamaized.net/products/0000081751/vs_image800.jpg"
+                                 alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>은은한 달빛 무드등</h5>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100"
+                                 src="https://th3.tmon.kr/thumbs/image/fed/564/7a0/e9d0c2fe6_700x700_95_FIT_1549865550.jpg"
+                                 alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>인테리어 무드등/ 달무드등</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="desc">
+                <h1>무드등을 팝니다 <span class="price">가격 : 20,000원/개</span></h1>
+                <p>이 무드등은 방안의 분위기를 아늑하게 만들어 줍니다.</p>
+                <p class="rate">달러-원 환율: <span id="rate-box">1,000</span></p>
+            </div>
+            <div class="order-box">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">주문자 이름</span>
+                    </div>
+                    <input id="order-name" type="text" class="form-control" aria-label="Default"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text">수량</label>
+                    </div>
+                    <select id="order-count" class="custom-select">
+                        <option selected value="">--수량을 선택하세요--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">전화번호</span>
+                    </div>
+                    <input type="text" class="form-control" id="order-phone" aria-describedby="basic-addon3">
+
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">우편번호</span>
+                    </div>
+                    <input type="text" name="zip" aria-describedby="basic-addon3">
+                    <button type="button" style="margin:5px; width:60px; height:32px;" onclick="openZipSearch()">검색
+                    </button>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">주소</span>
+                    </div>
+                    <input type="text" name="addr1" class="form-control" id="order-address">
+
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">상세</span>
+                    </div>
+                    <input type="text" name="addr2" class="form-control" id="order-address">
+                </div>
+                <button onclick="order()" type="button" class="btn btn-primary mybtn">주문하기</button>
+            </div>
+
+    </body>
+ <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET", // GET 방식으로 요청한다.
+                url: "https://api.manana.kr/exchange/rate.json",
+                data: {}, // 요청하면서 함께 줄 데이터 (GET 요청시엔 비워두세요)
+                success: function (response) { // 서버에서 준 결과를 response라는 변수에 담음
+                    let nowRate = response[1]['rate'];
+                    $('#rate-box').text(nowRate);
+                }
+            })
+        });
+
+
+        function order() {
+            let name = $('#order-name').val();
+            let count = $('#order-count').val();
+            let phone = $('#order-phone').val();
+            let address = $('#order-address').val();
+
+            if (name = '') {
+                alert('이름을 입력해 주세요')
+                return
+            } else if (count == '') {
+                alert('수량을 선택해 주세요')
+                return
+            } else if (phone == '') {
+                alert('전화번호를 입력해 주세요')
+                return
+            } else if (address == '') {
+                alert('주소를 입력해 주세요')
+                return
+            }
+            alert('주문이 완료되었습니다.')
+        }
+
+        function openZipSearch() {
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    $('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
+                    $('[name=addr1]').val(data.address);
+                    $('[name=addr2]').val(data.buildingName);
+                }
+            }).open();
+        }
+
+    </script>
+
+</html>
